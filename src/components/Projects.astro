@@ -10,6 +10,7 @@ import Postgres from "../icons/Postgres.astro"
 import Typescript from "../icons/Typescript.astro"
 import Badge from "./Badge.astro"
 import Github from "../icons/Github.astro"
+import Javscript from "../icons/Javscript.astro"
 
 
 const TAGS = {
@@ -58,6 +59,12 @@ const TAGS = {
     class: "bg-[#007ACC] text-white",
     icon: Typescript,
   },
+  JAVASCRIPT: {
+    name: "Javascript",
+    class: "bg-[#b3a337] text-black font-semibold",
+    icon: Javscript,
+  },
+  
 }
 const PROJECTS = [
   {
@@ -73,7 +80,6 @@ const PROJECTS = [
       "Clon de la página de AirBnB, con funcionalidades de búsqueda y filtrado.",
     link: "https://airbnb-clone-alpha-dusky.vercel.app/",
     github: "https://github.com/juancruzmarq/airbnb-clone",
-    linkClass: "bg-[#FF5A5F] text-white",
     image: "/projects/airbnb.webp",
     tags: [TAGS.NEXT,TAGS.TYPESCRIPT, TAGS.REACT, TAGS.TAILWIND ],
   },
@@ -82,7 +88,6 @@ const PROJECTS = [
     description:
       "Aplicación web para consultar el clima de cualquier ciudad del mundo.",
     link: "https://weather-ivory-seven.vercel.app/",
-    linkClass: "bg-[#FF5A5F] text-white",
     github: "https://github.com/juancruzmarq/weather-app",
     image: "/projects/weatherapp.webp",
     tags: [TAGS.REACT,TAGS.TYPESCRIPT, TAGS.TAILWIND],
@@ -93,11 +98,19 @@ const PROJECTS = [
     description:
       "Aplicación web del juego tateti y memo",
     link: "https://board-games-self.vercel.app/",
-    linkClass: "bg-[#FF5A5F] text-white",
     github: "https://github.com/juancruzmarq/board-games",
     image: "/projects/games.webp",
     tags: [TAGS.VITE,TAGS.TYPESCRIPT, TAGS.REACT, TAGS.TAILWIND ],
-  }, 
+  },
+  {
+    title: 'Calculadora impuesto dolar',
+    description:
+      "Calculadora de impuesto a las ganancias en dolares",
+    link: "https://calculadora-impuesto-dolar.vercel.app/",
+    github: "https://github.com/juancruzmarq/dolarImpuesto",
+    image: "/projects/dolarimpuesto.webp",
+    tags: [TAGS.JAVASCRIPT ],
+  },
   {
     title: "Pert App",
     description:
@@ -110,7 +123,8 @@ const PROJECTS = [
 ---
 
 {
-  PROJECTS.map(({ image, title, description, tags, link, github}) => (
+  PROJECTS.map(({ image, title, description, tags, link, github}, i) => (
+    <>
     <article class="my-10 ">
       <h3 class="text-2xl font-semibold text-green-300/80 mb-2  ">{title} 
         
@@ -144,12 +158,14 @@ const PROJECTS = [
         </div>
       <img
         loading="lazy"
-        class="rounded shadow-xl shadow-slate-400/20  aspect-auto my-4"
+        class="rounded drop-shadow-md border-white/20 border-[1px] aspect-auto my-4"
         src={image}
         alt={`Captura de pantalla del proyecto ${image}`}
       />
-      
-      
     </article>
+    {
+      i !== (PROJECTS.length - 1) && <div class="h-[3px] w-full  mt-10 bg-gradient-to-r from-transparent via-green-300/20 to-transparent "></div>  
+    }
+    </>
   ))
 }
