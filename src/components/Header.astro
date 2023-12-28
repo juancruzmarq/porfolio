@@ -1,9 +1,16 @@
+---
+import Download from '../icons/Download.astro'
+---
 <header class="flex flex-row justify-center py-4 items-center lg:py-5 w-full px-96 lg:mx-auto lg:justify-between sticky top-0 z-50 bg-[#1c1c29]/20">
-  <img src="https://avatars.githubusercontent.com/u/70668267?v=4" class="rounded-full w-12 h-12 hidden lg:block" alt="Foto de perfil de Juan Cruz">
-  <nav class="flex flex-row gap-x-10 opacity-90 ">    
+  <div class="flex flex-row items-center gap-4">
+    <img src="https://avatars.githubusercontent.com/u/70668267?v=4" class="rounded-full w-12 h-12 hidden lg:block " alt="Foto de perfil de Juan Cruz"/>
+  </div>
+  <nav class="flex flex-row gap-x-10 opacity-90 items-center">    
     <a href="#top" class="hover:text-green-300  transition duration-700 ">Inicio</a>
     <a href="#experiencia" class="hover:text-green-300  transition duration-700 ">Experiencia</a>
     <a href="#sobre-mi" class="hover:text-green-300  transition duration-700 ">Sobre mi</a>
     <a href="#contacto" class="hover:text-green-300  transition duration-700 ">Contacto</a>
+    <a href="" class="text-sm text-white/90 flex items-center gap-2 bg-transparent hover:text-green-300 border-white/50 border rounded-lg p-2 hover:border-green-300/30 hover:border hover:scale-110 transition duration-500">CV<Download class="size-4"/></a>
+
   </nav>
 </header>
