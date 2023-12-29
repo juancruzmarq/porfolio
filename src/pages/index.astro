@@ -12,6 +12,64 @@ import Experience from '../components/Experience.astro';
 import SectionContainer from '../components/SectionContainer.astro';
 import Mail from '../icons/Mail.astro';
 import Code from '../icons/Code.astro';
+import Atom from '../icons/Atom.astro';
+import Download from '../icons/Download.astro'
+import Python from '../icons/Python.astro';
+import React from '../icons/React.astro';
+import SkillCard from '../components/SkillCard.astro';
+import Nestjs from '../icons/Nestjs.astro';
+import Postgres from '../icons/Postgres.astro';
+import Typescript from '../icons/Typescript.astro';
+import Postman from '../icons/Postman.astro';
+import Docker from '../icons/Docker.astro';
+import Swagger from '../icons/Swagger.astro';
+import Mariadb from '../icons/Mariadb.astro';
+import Tailwind from '../icons/Tailwind.astro';
+
+const TECNOLOGIAS = [{
+	name: "Python",
+	style: "bg-gradient-to-tr from-slate-300/10 via-slate-300/40 to-slate-300/10",
+	Icon: Python,
+}, {
+	name: "ReactJS",
+	Icon: React,
+	style: "bg-gradient-to-tr from-slate-300/10 via-slate-300/40 to-slate-300/10",
+},{
+	name: "NestJS",
+	Icon: Nestjs,
+	style: "bg-gradient-to-tr from-slate-300/10 via-slate-300/40 to-slate-300/10",
+},{
+	name: "PostgreSQL",
+	Icon: Postgres,
+	style: "bg-gradient-to-tr from-slate-300/10 via-slate-300/40 to-slate-300/10",
+}, {
+	name: "Docker",
+	Icon: Docker,
+	style: "bg-gradient-to-tr from-slate-300/10 via-slate-300/40 to-slate-300/10",
+},{
+	name: "Typescript",
+	Icon: Typescript,
+	style: "bg-gradient-to-tr from-slate-300/10 via-slate-300/40 to-slate-300/10",
+}, {
+	name: "Postman",
+	Icon: Postman,
+	style: "bg-gradient-to-tr from-slate-300/10 via-slate-300/40 to-slate-300/10",
+}, {
+	name: "Swagger",
+	Icon: Swagger,
+	style: "bg-gradient-to-tr from-slate-300/10 via-slate-300/40 to-slate-300/10",
+}, {
+	name: "MariaDB",
+	Icon: Mariadb,
+	startEnd: "col-start-2 col-end-3",
+	style: "bg-gradient-to-tr from-slate-300/10 via-slate-300/40 to-slate-300/10",
+}, {
+	name: "TailwindCSS",
+	Icon: Tailwind,
+	startEnd: "col-start-3 col-end-4",
+	style: "bg-gradient-to-tr from-slate-300/10 via-slate-300/40 to-slate-300/10",
+}
+]
 
 
 ---
@@ -38,31 +96,52 @@ import Code from '../icons/Code.astro';
 						<Github class="size-4"/>
 						Github
 					</SocialPill>
-					<SocialPill href="https://twitter.com/Juancruuz">
-						<X class="size-4"/>
-						X
-					</SocialPill>
 					<SocialPill href="mailto:marquezjuanchy@hotmail.com">
 						<Mail class="size-4"/>
-						marquezjuanchy@hotmail.com
+						Email
 					</SocialPill>
+					<SocialPill href="./cv.txt" download="cv.txt">
+						<Download class="size-4"/>
+						CV
+					</SocialPill>
+
 			</nav>
 		</SectionContainer>
 
-		<SectionContainer id="experiencia" class="py-40">
-			<h2 class="text-2xl font-semibold mb-8 gap-x-2 items-center flex justify-start"><Computer class="size-6 opacity-50 "/>Experiencia </h2>
+		<SectionContainer id="experiencia" class="mt-32" >
+			<h2 class="text-3xl font-semibold mb-8  items-center flex justify-start">Experiencia </h2>
 			<Experience/>
 		</SectionContainer>
 
 		<Divider />
 
-		<SectionContainer id="proyectos" class="py-40">
-			<h2 class="text-2xl font-semibold mb-8 gap-x-2 items-center flex justify-start"><Code class="size-6 opacity-50"/>Proyectos </h2>
+		<SectionContainer id="proyectos" >
+			<h2 class="text-3xl font-semibold mb-8 gap-x-2 items-center flex justify-start">Proyectos </h2>
 			<Projects/>
 			<div class="flex w-full justify-center mt-10">
 				<a href="https://github.com/juancruzmarq?tab=repositories" target="_blank" class="text-xs items-center text-white/90 bg-transparent hover:text-green-300 border-white/50 border rounded-lg p-2 hover:border-green-300/30 hover:border hover:scale-110 transition duration-500">Ver más en Github</a>
 			</div>
 		</SectionContainer>
+
+		<Divider />
+
+		<SectionContainer id="tecnologias" class="mb-40">
+			<h1 class="text-3xl font-semibold mb-8 gap-x-2 items-center flex justify-center">Tecnologías </h1>
+			<div class="grid grid-cols-4 grid-flow-row gap-4 w-full">
+
+					{
+						TECNOLOGIAS.map(({name,style,startEnd, Icon}) => (
+							<SkillCard name={name} style={style} startEnd={startEnd}>
+									<Icon class='size-12'/>
+							</SkillCard>
+						))
+					}
+
+			
+
+			</div>
+		</SectionContainer>
+
 	</main>
 </Layout>
 

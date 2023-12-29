@@ -5,32 +5,32 @@ const EXPERIENCE = [
       title: 'Desarrollador Backend',
       company: 'VEMO',
       date: 'Jul 2023 - Presente',
-      description: 'Actualmente estoy a cargo del backend del modulo de OMS (Operational Management System) de VEMO. Este modulo se encarga de la gestion, administracion y control de cronogramas, turnos, y horarios de los conductores en VEMO. Utilizo tecnologias como Typescript, NestJS, Postgres, Azure Bus , Docker, etc.',
+      description: 'Actualmente estoy a cargo del backend del modulo de OMS (Operational Management System) de VEMO. Este modulo se encarga de la gestion, administracion y control de cronogramas, turnos, y horarios de los conductores. Además desarrollo el proyecto de Auth, gestion y administracion de usuarios, permisos y roles. Utilizo tecnologias como Typescript, NestJS, Postgres, Azure Bus , Docker, etc.',
       link: 'https://vemovilidad.com/',
     },
     {
       title: 'Desarrollador Full Stack',
       company: 'KPMG',
       date: 'Mar 2022 - Jul 2023',
-      description: 'Desarrollo de servicios Backend con tecnología Typescript, NestJS, y gestión de bases de datos. Desarrollo de servicios Frontend con tecnología como React, TailwindCSS, Typescript. Desarrollo de scripts para automatizar la lectura de archivos en formato PDF con Python y bases de datos.',
+      description: 'Desarrollo de servicios Backend con tecnología Typescript, NestJS, y Mariadb. Desarrollo de servicios Frontend con tecnología como React, TailwindCSS, Typescript. Desarrollo de scripts para automatizar la lectura de archivos en formato PDF con Python.',
       link: 'https://kpmg.com/ar/es/home.html',
     },
     {
       title: 'Profesor tutor',
       company: 'UTN',
       date: 'Mar 2023 - May 2023',
-      description: 'Profesor tutor en Programa Testing Argentina 4.0 - UTN Ayuda a alumnos que realizaron el curso, corrección de prácticas y armado de grupos.',
+      description: 'Profesor tutor en Programa Testing Argentina 4.0 - UTN. Ayuda a alumnos que realizaron el curso, corrección de prácticas y armado de grupos.',
       link: "https://www.frvm.utn.edu.ar/"
     },
     {
       title: 'Desarrollador Full Stack',
       company: 'Casa Vila',
       date: '2019 - 2022',
-      description: 'Fui responsable de crear un sistema de gestión de inventario. Utilicé tecnologías como Python,React y Postgres para desarrollar una aplicación que permitiera realizar un seguimiento en tiempo real de los productos disponibles, gestionar las ventas y generar informes de inventario.',
+      description: 'Fui responsable de crear un sistema de gestión de inventario. Utilicé tecnologías como Python, React y Postgres para desarrollar una aplicación que permitiera realizar un seguimiento en tiempo real de los productos disponibles, gestionar las ventas y generar informes de inventario.',
     },
   ]
 ---
-<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">                  
+<ol class="relative border-s border-gray-200 dark:border-gray-700">                  
   {EXPERIENCE.map((job) => (
     <li class="mb-10 ms-4">
     <ExperienceItem {...job} />

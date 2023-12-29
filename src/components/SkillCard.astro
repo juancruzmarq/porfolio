@@ -1,0 +1,12 @@
+---
+const { name, style, startEnd } = Astro.props;
+---
+
+<div class=`mx-auto flex justify-items-center items-center w-full h-full hover:scale-110 transition duration-500 ${startEnd}`>
+    <div class=`flex justify-center h-full w-full rounded-sm  p-[2px] ${style}`> 
+      <div class="flex flex-col gap-4 h-full w-full items-center justify-center py-10 bg-[#0a0a0a] bg-blend-darken hover:bg-blend-luminosity">
+        <slot/>
+        <h3 class="text-white">{name}</h3>
+      </div>             
+    </div>
+</div>
