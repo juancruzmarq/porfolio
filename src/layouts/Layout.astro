@@ -20,6 +20,7 @@ const {description,  title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/jc.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		
 	</head>
 	<body class="relative bg-[#0a0a0a]">
 		<div
@@ -28,8 +29,14 @@ const {description,  title } = Astro.props;
 		<Header/>
 		<slot />
 		<Footer/>
+		
 	</body>
+	<script>
+		import { inject } from "@vercel/analytics";
+		inject()
+	</script>
 </html>
+
 <style is:global>
 	:root {
 		color-scheme: light dark;
