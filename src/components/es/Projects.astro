@@ -1,0 +1,159 @@
+---
+import Nestjs from "../../icons/Nestjs.astro";
+import Tailwind from "../../icons/Tailwind.astro";
+import React from "../../icons/React.astro";
+import Nextjs from "../../icons/Nextjs.astro";
+import Vite from "../../icons/Vite.astro";
+import Python from "../../icons/Python.astro";
+import Postman from "../../icons/Postman.astro";
+import Postgres from "../../icons/Postgres.astro";
+import Typescript from "../../icons/Typescript.astro";
+import Github from "../../icons/Github.astro";
+import Javscript from "../../icons/Javscript.astro";
+
+const TAGS = {
+  NESTJS: {
+    name: "Nestjs",
+    class: "bg-red-700/30 text-white",
+    icon: Nestjs,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159]/30 text-white",
+    icon: Tailwind,
+  },
+  REACT: {
+    name: "React",
+    class: "bg-[#61DAFB]/30 text-white",
+    icon: React,
+  },
+  NEXT: {
+    name: "Next.js",
+    class: "bg-white/30 text-white",
+    icon: Nextjs,
+  },
+  VITE: {
+    name: "Vite",
+    class: "bg-[#646CFF]/30 text-white",
+    icon: Vite,
+  },
+  PYTHON: {
+    name: "Python",
+    class: "bg-[#3776AB]/30 text-white",
+    icon: Python,
+  },
+  POSTMAN: {
+    name: "Postman",
+    class: "bg-[#FF6C37]/30 text-white",
+    icon: Postman,
+  },
+  POSTGRES: {
+    name: "Postgres",
+    class: "bg-[#336791]/30 text-white",
+    icon: Postgres,
+  },
+  TYPESCRIPT: {
+    name: "Typescript",
+    class: "bg-[#007ACC]/30 text-white",
+    icon: Typescript,
+  },
+  JAVASCRIPT: {
+    name: "Javascript",
+    class: "bg-[#b3a337]/30 text-white",
+    icon: Javscript,
+  },
+};
+const PROJECTS = [
+  {
+    title: "OMS Vemo Backend",
+    description:
+      "Backend del modulo de operaciones para VEMO. Dedicado a la gestión de turnos, cronogramas, y operaciones de los conductores. Modulo de administración para la gestión de usuarios, roles, y permisos.",
+    image: "/projects/vemo.webp",
+    tags: [TAGS.NESTJS, TAGS.TYPESCRIPT, TAGS.POSTGRES, TAGS.POSTMAN],
+  },
+  {
+    title: "Clon Airbnb",
+    description:
+      "Clon de la página de AirBnB, con funcionalidades de búsqueda y filtrado.",
+    link: "https://airbnb-clone-alpha-dusky.vercel.app/",
+    github: "https://github.com/juancruzmarq/airbnb-clone",
+    image: "/projects/airbnb.webp",
+    tags: [TAGS.NEXT, TAGS.TYPESCRIPT, TAGS.REACT, TAGS.TAILWIND],
+  },
+  {
+    title: "Weather App",
+    description:
+      "Aplicación web para consultar el clima de cualquier ciudad del mundo.",
+    link: "https://weather-ivory-seven.vercel.app/",
+    github: "https://github.com/juancruzmarq/weather-app",
+    image: "/projects/weatherapp.webp",
+    tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.TAILWIND],
+  },
+  {
+    title: "Calculadora impuesto dolar",
+    description: "Calculadora de impuesto a las ganancias en dolares",
+    link: "https://calculadora-impuesto-dolar.vercel.app/",
+    github: "https://github.com/juancruzmarq/dolarImpuesto",
+    image: "/projects/dolarimpuesto.webp",
+    tags: [TAGS.JAVASCRIPT],
+  },
+  {
+    title: "Pert App",
+    description: "Aplicación de escritorio para resolver el algoritmo PERT",
+    github: "https://github.com/juancruzmarq/PertApp",
+    image: "/projects/pert.webp",
+    tags: [TAGS.PYTHON],
+  },
+];
+---
+
+{
+  PROJECTS.map(({ image, title, description, tags, link, github }, i) => (
+    <>
+      <article class="my-10 ">
+        <h3 class="text-2xl font-semibold text-green-300/80 mb-2  ">{title}</h3>
+        <p class="text-lg mb-4 text-pretty">{description}</p>
+        <div class="flex flex-row justify-between">
+          <div class="flex items-center justify-items-center ">
+            <ul class="flex gap-x-2 flex-row items-center">
+              {tags.map((tag) => (
+                <li>
+                  <span
+                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}
+                  >
+                    <tag.icon class="size-4" />
+                    {tag.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div class="flex flex-row gap-4 items-center">
+            {github && (
+              <a href={github} target="_blank">
+                <Github class="size-7" />
+              </a>
+            )}
+            {link && (
+              <a
+                href={link}
+                class="text-xs items-center text-white/90 bg-transparent hover:text-green-300 border-white/50 border rounded-lg p-2 hover:border-green-300/30 hover:border hover:scale-110 transition duration-500"
+              >
+                Ver web
+              </a>
+            )}
+          </div>
+        </div>
+        <img
+          loading="lazy"
+          class="rounded drop-shadow-md border-white/20 border-[1px] aspect-auto my-4"
+          src={image}
+          alt={`Captura de pantalla del proyecto ${title}`}
+        />
+      </article>
+      {i !== PROJECTS.length - 1 && (
+        <div class="h-[3px] w-full  mt-10 bg-gradient-to-r from-transparent via-green-300/20 to-transparent " />
+      )}
+    </>
+  ))
+}

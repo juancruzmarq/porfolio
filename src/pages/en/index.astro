@@ -1,30 +1,29 @@
 ---
-import Layout from "../layouts/es/Layout.astro";
-
+import Layout from "../../layouts/en/Layout.astro";
 // Components
-import Badge from "../components/Badge.astro";
-import SocialPill from "../components/SocialPill.astro";
-import Projects from "../components/es/Projects.astro";
-import Divider from "../components/Divider.astro";
-import Experience from "../components/es/Experience.astro";
-import SectionContainer from "../components/SectionContainer.astro";
+import Badge from "../../components/Badge.astro";
+import SocialPill from "../../components/SocialPill.astro";
+import Projects from "../../components/en/Projects.astro";
+import Divider from "../../components/Divider.astro";
+import Experience from "../../components/en/Experience.astro";
+import SectionContainer from "../../components/SectionContainer.astro";
 
-// Tecnologias
-import Linkedin from "../icons/Linkedin.astro";
-import Github from "../icons/Github.astro";
-import Mail from "../icons/Mail.astro";
-import Download from "../icons/Download.astro";
-import Python from "../icons/Python.astro";
-import React from "../icons/React.astro";
-import SkillCard from "../components/SkillCard.astro";
-import Nestjs from "../icons/Nestjs.astro";
-import Postgres from "../icons/Postgres.astro";
-import Typescript from "../icons/Typescript.astro";
-import Postman from "../icons/Postman.astro";
-import Docker from "../icons/Docker.astro";
-import Swagger from "../icons/Swagger.astro";
-import Mariadb from "../icons/Mariadb.astro";
-import Tailwind from "../icons/Tailwind.astro";
+// Icons
+import Mail from "../../icons/Mail.astro";
+import Github from "../../icons/Github.astro";
+import Linkedin from "../../icons/Linkedin.astro";
+import Download from "../../icons/Download.astro";
+import Python from "../../icons/Python.astro";
+import React from "../../icons/React.astro";
+import SkillCard from "../../components/SkillCard.astro";
+import Nestjs from "../../icons/Nestjs.astro";
+import Postgres from "../../icons/Postgres.astro";
+import Typescript from "../../icons/Typescript.astro";
+import Postman from "../../icons/Postman.astro";
+import Docker from "../../icons/Docker.astro";
+import Swagger from "../../icons/Swagger.astro";
+import Mariadb from "../../icons/Mariadb.astro";
+import Tailwind from "../../icons/Tailwind.astro";
 
 const TECNOLOGIAS = [
   {
@@ -96,8 +95,8 @@ console.log(currentLocale);
 ---
 
 <Layout
-  title="Juan Cruz Marquez - Portfolio personal"
-  description="Contrata a Juan Cruz Márquez como desarrollador web. Desarrollo de sitios web, aplicaciones web, aplicaciones móviles, ecommerce, landing pages, y más."
+  title="Juan Cruz Marquez - Personal portfolio"
+  description="Hire Juan Cruz Márquez as a web developer. Website development, web applications, mobile applications, ecommerce, landing pages, and more."
 >
   <main class="z-30">
     <SectionContainer
@@ -109,12 +108,12 @@ console.log(currentLocale);
         <img
           src="https://avatars.githubusercontent.com/u/70668267?v=4"
           class="rounded-full w-12 h-12 lg:hidden"
-          alt="Foto de perfil de Juan Cruz"
+          alt="Profile foto of Juan Cruz"
         />
         Hey <span
           class="hover:rotate-45 hover:transition hover:duration-300 transition duration-300"
           >👋</span
-        > soy Juan Cruz ! <div class="justify-center items-center flex">
+        > i'm Juan Cruz ! <div class="justify-center items-center flex">
           <Badge href="https://vemovilidad.com/">Working in VEMO!</Badge>
         </div>
       </h1>
@@ -122,11 +121,11 @@ console.log(currentLocale);
         class="flex flex-col text-3xl px-28 w-full text-start text-pretty lg:inline-block lg:justify-items-start lg:max-w-[700px] lg:px-0"
       >
         <span class="text-white/90"
-          >Desarrollador Full Stack y futuro Ing. en Sistemas</span
-        >
+          >Full Stack Developer and future Systems Engineer
+        </span>
         <span
           class="bg-gradient-to-r from-neutral-300 to-stone-100 bg-clip-text text-transparent"
-          >+4 años de experiencia</span
+          >+4 years of experience</span
         >
       </div>
       <div class="w-full text-start px-28 lg:px-0">
@@ -151,7 +150,7 @@ console.log(currentLocale);
           Email
         </SocialPill>
         <SocialPill
-          href="./JuanCruzMarquezCV.pdf"
+          href="./JuanCruzMarquezCV_EN.pdf"
           download="JuanCruzMarquezCV.pdf"
         >
           <Download class="size-4" />
@@ -162,7 +161,7 @@ console.log(currentLocale);
 
     <SectionContainer id="experiencia" class="mt-32 px-28 lg:px-0">
       <h2 class="text-3xl font-semibold mb-8 items-center flex justify-start">
-        Experiencia
+        Experience
       </h2>
       <Experience />
     </SectionContainer>
@@ -173,7 +172,7 @@ console.log(currentLocale);
       <h2
         class="text-3xl font-semibold mb-8 gap-x-2 items-center flex justify-start"
       >
-        Proyectos
+        Proyects
       </h2>
       <Projects />
       <div class="flex w-full justify-center mt-10">
@@ -181,7 +180,7 @@ console.log(currentLocale);
           href="https://github.com/juancruzmarq?tab=repositories"
           target="_blank"
           class="text-xs items-center text-white/90 bg-transparent hover:text-green-300 border-white/50 border rounded-lg p-2 hover:border-green-300/30 hover:border hover:scale-110 transition duration-500"
-          >Ver más en Github</a
+          >See more on Github</a
         >
       </div>
     </SectionContainer>
@@ -192,7 +191,7 @@ console.log(currentLocale);
       <h1
         class="text-3xl font-semibold mb-8 gap-x-2 items-center flex justify-center"
       >
-        Tecnologías
+        Technologies
       </h1>
       <div class="grid grid-cols-4 grid-flow-row gap-4 w-full">
         {

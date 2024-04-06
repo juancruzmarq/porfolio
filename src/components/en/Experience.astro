@@ -1,0 +1,46 @@
+---
+import ExperienceItem from "../ExperienceItem.astro";
+const EXPERIENCE = [
+  {
+    title: "Backend Developer",
+    company: "VEMO",
+    date: "Jul 2023 - Present",
+    description:
+      "I am currently in charge of the backend of the OMS (Operational Management System) module of VEMO. This module is responsible for the management, administration and control of schedules, shifts, and driver schedules. I also develop the Auth project, management and administration of users, permissions and roles. I use technologies like Typescript, NestJS, Postgres, Azure Bus, Docker, etc.",
+    link: "https://vemovilidad.com/",
+  },
+  {
+    title: "Full Stack Developer",
+    company: "KPMG",
+    date: "Mar 2022 - Jul 2023",
+    description:
+      "Development of Backend services with Typescript, NestJS, and Mariadb technology. Development of Frontend services with technology such as React, TailwindCSS, Typescript. Development of scripts to automate the reading of PDF files with Python.",
+    link: "https://kpmg.com/ar/es/home.html",
+  },
+  {
+    title: "Supervising professor",
+    company: "UTN",
+    date: "Mar 2023 - May 2023",
+    description:
+      "Tutor in the Testing Argentina 4.0 Programme - UTN. Help to students who took the course, correction of practices and group assembly.",
+    link: "https://www.frvm.utn.edu.ar/",
+  },
+  {
+    title: "Full Stack Developer",
+    company: "Casa Vila",
+    date: "2019 - 2022",
+    description:
+      "I was responsible for creating an inventory management system. I used technologies such as Python, React and Postgres to develop an application for real-time tracking of available products, sales management and inventory reporting.",
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700 text-white">
+  {
+    EXPERIENCE.map((job) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...job} />
+      </li>
+    ))
+  }
+</ol>
